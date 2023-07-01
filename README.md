@@ -1,6 +1,6 @@
 # Language Bridge
 
-The Language Bridge App is a Streamlit application designed to assist Indian students in translating their notes from English into multiple Indian languages. The app supports various file formats, including txt, docx, pdf, and pptx. It utilizes Azure services, specifically App Services: Web app and Cognitive Services: Translator, to provide seamless translation capabilities.
+The Language Bridge App is a Streamlit application designed to assist Indian students in translating their notes from English into multiple Indian languages. The app supports various file formats, including docx, pdf, and pptx. It utilizes Azure services, specifically App Services: Web app and Cognitive Services: Translator, to provide seamless translation capabilities.
 
 [Project Link]()
 
@@ -8,7 +8,7 @@ The Language Bridge App is a Streamlit application designed to assist Indian stu
 
 ## Features
 
-- File Upload: Users can upload their English notes in txt, docx, pdf, or pptx formats.
+- File Upload: Users can upload their English notes in docx, pdf, or pptx formats.
 - Language Selection: Users can choose the target language for translation from a list of available options, including Assamese, Hindi, Marathi, Tamil, and Telugu.
 - Translation: The uploaded notes are automatically translated into the selected language using the Cognitive Services Translator API.
 - Text Display: The translated text is displayed within the app, allowing users to review and verify the accuracy of the translation.
