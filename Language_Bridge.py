@@ -6,13 +6,6 @@ import pptx
 from translation import translate_text
 
 
-def extract_text_from_txt(file_name):
-    with open(file_name) as file:
-        text = file.read()
-
-    return text
-
-
 def extract_text_from_pdf(file):
     with pdfplumber.open(file) as pdf:
         text = ""
@@ -70,7 +63,7 @@ def main():
     st.set_page_config(layout="wide")
     st.title("Language Bridge")
 
-    uploaded_file = st.file_uploader("File", type=["txt", "pdf", "docx", "pptx"], label_visibility="hidden")
+    uploaded_file = st.file_uploader("File", type=["pdf", "docx", "pptx"], label_visibility="hidden")
     language_dict = {"Assamese": "as", "Hindi": "hi", "Marathi": "mr", "Tamil": "ta", "Telugu": "te"}
     selected_language = st.selectbox("Select target language", [key for key in language_dict])
 
@@ -87,13 +80,7 @@ def main():
             else:
                 limit = 154
 
-            if file_type == "txt":
-                text = extract_text_from_txt(uploaded_file.name)
-                translated_text = limit_consecutive_newlines(translate_text(text, language_dict[selected_language]))
-                st.code(split_text_into_lines(translated_text, limit), language="markdown")
-                st.download_button(label="Download TXT", data=translated_text.encode("utf-8"),
-                                   file_name=f"{uploaded_file.name.split('.')[0]}_{selected_language.lower()}.txt")
-            elif file_type == "pdf":
+            if file_type == "pdf":
                 text = extract_text_from_pdf(uploaded_file)
                 translated_text = translate_text(text, language_dict[selected_language])
                 st.code(split_text_into_lines(translated_text, limit), language="markdown")
