@@ -4,7 +4,7 @@ The Language Bridge App is a Streamlit application designed to assist Indian stu
 
 [Project Link](https://lang-bridge.azurewebsites.net)
 
-[Project Demo Link]()
+[Project Demo Link](https://www.youtube.com/watch?v=d02Hks-TX6U)
 
 ## Features
 
